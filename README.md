@@ -14,4 +14,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-![alt text](https://github.com/Sathishabm210/custom/blob/master/Home.JPG?raw=true)
+## Steps to follow
+
+once backend and frontend apps started running 
+1. Go to Homepage
+2. Click on truck management tab
+3. Add new truck name, publish month and service date 
+4. click on add
+5. To appear in home page add/update todays date
+
+## Homepage displays with today's available trucks
+![Home Page](https://github.com/Sathishabm210/custom/blob/master/Home.JPG?raw=true)
+
+## Truck Management Add Edit details
+![Truck Management](https://github.com/Sathishabm210/custom/blob/master/Truck%20Manage.JPG?raw=true)
