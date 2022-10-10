@@ -1,0 +1,99 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body needs-validation' >
+      <form  #userlogin="ngForm" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Truck Name</label>
+          <input type="text" class="form-control" placeholder="Enter truck name" name="inputTruckName" id="validationCustom01" [(ngModel)]="truckName" required>
+          <div class="invalid-feedback">
+            Enter Truck Name.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom02" class="form-label">Publish on Month</label>
+          <select aria-placeholder="Select month to publish" id="validationCustom02" class="form-control" name="inputMonth" [(ngModel)]="publishedMonth" required>
+            <option selected>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid Month.
+          </div>
+        </div>
+        
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Service Available Date:</label>
+        <input type="date" class="form-control" placeholder="Service Available Date" name="inputAvailableDate" id="validationCustom04" [(ngModel)]="availableDate" required>
+        <div class="invalid-feedback">
+          Please select a date.
+        </div>
+      </div>
+    <div class="col-md-2">
+      <label for="validationCustom03" class="form-label"></label>
+        <div class="col-md-1">
+          <button *ngIf='showAddButton' type="submit" (click) = "createTruck(userlogin)" class="btn btn-primary">Add</button>
+        </div>
+        <div class="col-md-1">
+          <button  *ngIf='showUpdateButton' type="submit" (click) = "updateTruck(userlogin)" class="btn btn-primary">Update</button>
+        </div>
+  </div>
+      </form>
+      <br> <hr/> 
+    <div class='table-responsive'>
+      <div class='row'>
+        <div class='col-md-2'>Filter by:</div>
+        <div class='col-md-4'>
+          <input type='text' class="form-control"
+                 [(ngModel)]='listFilter' />
+        </div>
+      </div>
+      <table class='table'
+             *ngIf='trucks.length'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Truck Name</th>
+            <th>Published Month</th>
+            <th>Service Available Date(YYYY/MM/DD)</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let truck of filteredtrucks'>
+            <td>
+              <img src='assets/images/food-truck.jpg'
+                   [title]='truck.truckName'
+                   [style.width.px]='imageWidth'
+                   [style.margin.px]='imageMargin'>
+            </td>
+            <td>
+              <a [routerLink]="['/trucks', truck.id]">
+                {{ truck.truckName }}
+              </a>
+            </td>
+            <td>{{ truck.publishedMonth }}</td>
+            <td>{{ truck.availableDate }}</td>
+            <td>
+              <button class='btn btn-primary' (click) = "editTruck(truck)">Edit</button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

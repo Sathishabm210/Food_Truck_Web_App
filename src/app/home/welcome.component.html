@@ -1,0 +1,35 @@
+﻿<div class="card">
+  <div class="card-header">
+    Today's Food Trucks
+  </div>
+  <div class="card-body">
+    <div class='table-responsive'>
+      <table class='table'
+             *ngIf='trucks.length'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Truck Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let truck of filteredtrucks'>
+            <td>
+              <img src='assets/images/food-truck.jpg'
+                   [title]='truck.truckName'
+                   [style.width.px]='imageWidth'
+                   [style.margin.px]='imageMargin'>
+            </td>
+            <td>
+              <a [routerLink]="['/trucks', truck.id]">
+                {{ truck.truckName }}
+              </a>
+            </td>
+            <td>{{ truck.availableDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

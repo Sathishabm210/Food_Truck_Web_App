@@ -1,0 +1,42 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle + ': ' + truck?.truckName}}
+  </div>
+
+  <div class='card-body'
+       *ngIf='truck'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'>Truck Name:</div>
+          <div class='col-md-8'>The Spitfire Barbeque Truck</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'> If you haven’t heard of them, read their quirky punch line – “it’s no sin to get sauce on your chin”. Inspired by his Italian culinary teacher, owner Siddhanth Sawkar came up with the Spitfire BBQ Truck which has now turned into a cult among the Bangalorean barbeque lovers. Their highlight includes New York-style chili hot dogs, hickory-smoked barbeque chili chicken pops, slow-cooked pork ribs, and Cajun-spiced BBQ chicken burgers. With a variety of smoking hot delicacies ranging from double bacon double chicken steak burger, grilled chicken wings, and coleslaw burger, the truck has established itself on the streets of the IT Hub with its distinctive savory flavor</div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class='row'>
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'>Truck Name:</div>
+          <div class='col-md-8'>The SWAT Truck</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'>This military-themed truck is our new favorite food truck in town. Here is your share of the best Mexican and American street food from Molten Cheese Nachos, Peri-Peri Prawns, Fish and Chips, Mac n’ Cheese Burger, Beef Burger, BBQ Pork Ribs and Chops while their Deep Fried Oreos with chocolate sauce and ice-cream for dessert serve as a cherry on the cake. This American Curbside Gourmet prepares its dishes in a unique, authentic taste of which you simply can’t get enough. The brainchild of three hotel management graduates, Vivek Cornelio, Lioma D’sSouza, and Jimson Johns, the food truck has won the 2nd Best Burgers in Bangalore on the occasion of Burger Riot 2015.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='card-footer'>
+    <button class='btn btn-outline-secondary'
+            style='width:80px'
+            (click)='onBack()'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+  </div>
+</div>
