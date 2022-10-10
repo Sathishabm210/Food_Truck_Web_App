@@ -18,7 +18,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 once backend and frontend apps started running 
 1. Go to Homepage
-2. Click on truck management tab
+2. Click on truck Manage Trucks tab
 3. Add new truck name, publish month and service date 
 4. click on add
 5. To appear in home page add/update todays date
